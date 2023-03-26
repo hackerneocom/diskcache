@@ -80,7 +80,7 @@ func TestPut(t *testing.T) {
 	}
 
 	for k, b := range blobs {
-		path := filePath(storageDir, k)
+		path := completeFileName(storageDir, k)
 		data, err := ioutil.ReadFile(path)
 		catch(err)
 

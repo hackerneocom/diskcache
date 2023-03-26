@@ -3,6 +3,7 @@ package diskcache
 import (
 	"io"
 	"os"
+	"path/filepath"
 )
 
 func writeFile(dir, key string, r io.Reader) (string, int64, error) {
@@ -22,7 +23,7 @@ func writeFile(dir, key string, r io.Reader) (string, int64, error) {
 }
 
 func filePath(dir, name string) string {
-	return dir + string(os.PathListSeparator) + name
+	return filepath.Join(dir, name)
 }
 
 func validDir(dir string) bool {
